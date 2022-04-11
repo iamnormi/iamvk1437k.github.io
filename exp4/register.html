@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function validate(form1){
+            var retval=true;
+            var username=form1.name.value;
+            var password1=form1.pd.value;
+            var password2=form1.cfpd.value;
+            if(username.length < 8){
+                retval=false;
+                window.alert("user name less than 8 chars");
+            }
+            if(password1.length<6){
+                retval=false;
+                window.alert("pwd should be > 6 char's ");
+                form1.pd.value="";
+                form1.cfpd.value="";
+            }
+            if(password1!=password2)
+            {
+                retval=false;
+                window.alert("ur password mismatched ");
+                form1.pd.value="";
+                form1.cfpd.value="";
+            }
+            return retval;
+        }
+    </script>
+</head>
+    <body>
+	<center><h1>REGISTERATION</h1></center><hr>
+            <form name="form1" onsubmit="validate(this)">
+                <br>Name:<input type="text" name="name">
+                <br>Date of birth: <input type="date" name="dob"value="" />
+		            <br>Gender:<br>
+                    Male <input type="radio" name="gen"> 
+                    Female <input type="radio" name="gen">
+		            <br>Address: <textarea rows="5" cols="15"></textarea>
+		            <br>E-mail:<input type="email" name="mail">
+		            <br>Password:<input type="password" name="pd">
+		            <br>Confirm Password:<input type="password" name="cfpd"><br>
+                    <input type="submit" value="Submit">
+            </form>
+            <a href="Login.html">Go Back</a>
+    </body>
+</html>

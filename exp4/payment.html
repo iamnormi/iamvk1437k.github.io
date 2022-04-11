@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payment</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+      function validate(form1){
+        var cur=new Date();
+        var retval=true;
+        var b=form1.mm.value;
+        var c=form1.yyyy.value;
+        if(a<cur.getMonth() && c>=cur.getFullYear()){
+          retval=false;
+          window.alert("Your card has expired");
+        }
+        else
+        {window.alert("Your Payment Proceeded");}
+        return retval;
+      }
+    </script>  
+  </head>
+    <body>
+        <center><h1>Payment Using Credit Card</h1></center><hr>
+          <form name="form1" onSubmit="validate(this)">
+            <br>Select Bank:
+            <select id="bk">
+              <option>State Bank of india</option>
+              <option>Indian Bank</option>
+              <option>Indian Overseas Bank</option>
+            </select>
+            <br>Enter Your Name:<input type="text" name="">
+            <br>Enter card Number:<input type="text" name="" size="19">
+            <br>Enter Expiry Date: Month<input type="text" name="mm" size="2">
+            Year <input type="text" name="yyyy" size="4">
+            <br>Enter CVV:<input type="text" name="cvv" size="3">
+            <br><input type="submit" value="Proceed" >
+          </form>
+          
+          <a href="Login.html">Go Back</a>
+    </body>
+</html>
